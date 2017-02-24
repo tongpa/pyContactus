@@ -9,8 +9,9 @@ from pycontactus import model
 from pycontactus.model import DBSession
 
 class RootController(TGController):
+    
     @expose('pycontactus.templates.index')
     def index(self):
-        sample = DBSession.query(model.Sample).first()
-        flash(_("Hello World!"))
-        return dict(sample=sample)
+       
+        
+        return dict()
