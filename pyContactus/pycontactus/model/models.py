@@ -35,10 +35,21 @@ class DetailReport(MasterBase, DeclarativeBase):
     def __init__(self, id_detail_report =None, id_detail_report_type=None, user_id=None , reporter=None, email=None, message=None, create_date=None, update_date=None, active=1):
         super(DetailReport, self).__init__(DBSession) 
         
-        self.active = 1;
-        self.create_date =  datetime.now();
+        self.id_detail_report =id_detail_report
+        self.id_detail_report_type=id_detail_report_type
+        self.user_id=user_id
+        self.reporter=reporter
+        self.email=email
+        self.message=message
+        
+        self.active=1
+        
+      
+        
+    def __str__(self):
+        return '<DetailReport : id_detail_report = %s>' % (self.id_detail_report )
 
-class DetailReportType(DeclarativeBase):
+class DetailReportType(MasterBase, DeclarativeBase):   
     __tablename__ = 'cts_detail_report_type'
 
     id_detail_report_type = Column(BigInteger, autoincrement=True, primary_key=True)
@@ -51,7 +62,11 @@ class DetailReportType(DeclarativeBase):
     update_date = Column(DateTime ,onupdate=sql.func.utc_timestamp())
     
     def __init__(self):
+        super(DetailReportType, self).__init__(DBSession) 
         self.active = 1;
         self.create_date =  datetime.now();
     
+    @classmethod  
+    def getAll(cls, act= 1):
+        return DBSession.query(cls).filter(cls.active == str(act).decode('utf-8')).all();
     
