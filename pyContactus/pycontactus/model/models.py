@@ -42,7 +42,7 @@ class DetailReport(MasterBase, DeclarativeBase):
         self.email=email
         self.message=message
         
-        self.active=1
+        self.active=active
         
       
         
