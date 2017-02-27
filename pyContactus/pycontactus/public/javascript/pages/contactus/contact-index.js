@@ -8,10 +8,6 @@ var app = angular.module('Contactus', ['ui.grid', 'ngTouch', 'ngAnimate', 'ui-li
 		
 		$scope.init = function(){
 			language.init();
-			
-			
-			
-			
 		};
 		
 		

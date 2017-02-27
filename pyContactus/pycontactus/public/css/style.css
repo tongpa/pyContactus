@@ -4,5 +4,6 @@
 }
 
 .vis-hidden{
- 	visibility: hidden;
+ 	/* visibility: hidden; */
+ 	display:none;
 }

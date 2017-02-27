@@ -35,11 +35,13 @@ class RootController(TGController):
     @expose('pycontactus.templates.index')
     def index(self, failure=None,came_from=lurl('/')):
         reload(sys).setdefaultencoding('utf8')
-        self.email = ''
+        self.email=''
+        self.reporter=''
         if request.identity:           
             user=request.identity['user']; 
-            self.email=user.email_address        
+            self.email=user.email_address 
+            self.reporter=user.display_name
         self.report_type=[]     
         self.report_type = model.DetailReportType.getAll(1)
-        return dict(page='contactus', reporttype=self.report_type, email_address=self.email)
+        return dict(page='contactus', reporttype=self.report_type, email_address=self.email, reporter=self.reporter)
  

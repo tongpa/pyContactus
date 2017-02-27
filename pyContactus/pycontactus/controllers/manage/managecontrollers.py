@@ -19,10 +19,15 @@ class ManageControllers(TGController):
    
     @expose('json')
     def AddContactUs(self, **kw):
-        reload(sys).setdefaultencoding('utf8') 
-               
+        reload(sys).setdefaultencoding('utf8')
+        self.userid=None 
+        if request.identity:
+            user=request.identity['user']; 
+            self.userid=user.user_id
         self.ContactUs = model.DetailReport();
         self.ContactUs.id_detail_report_type = 1
+        self.ContactUs.user_id=self.userid
+        self.ContactUs.reporter = kw['reporter']
         self.ContactUs.email = kw['email']
         self.ContactUs.message = kw['message']
         self.ContactUs.save()
