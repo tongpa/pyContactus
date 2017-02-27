@@ -56,12 +56,14 @@
 <py:block name="body_menu">${header_menu()}</py:block>
   	<py:block name="body_footer">${footer_menu()}</py:block>
   	
-  	<form action=""   method="post" id="contactus-form" ng-controller="ContactusData" ng-submit="submitContactus()" >				
-  	<div ng-app="Contactus"> 
-		<div ui-i18n="{{lang}}">			
-		<div class="content" ng-init="init()"> 		
-		<div class="panel" >  
-	        <div class="panel-heading text-indent-title">
+  	<div ng-app="Contactus" ng-controller="ContactusData" ng-init="init()">
+  	<div ui-i18n="{{lang}}">
+  	
+  	<form class="" action="${tg.url('/contactus/manage/AddContactUs')}"  id="contactus-form" ng-submit="saveContactUs()" > <!-- method="post" -->
+				
+		<div class="content" > 		
+		<div class="panel" >
+			<div class="panel-heading text-indent-title">
 	        	<div class="row">
 					<span lang="oth">contact_us</span>
 				</div>
@@ -71,7 +73,7 @@
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">email</span></label>
 				<div class="col-md-9">
-					<input type="text"  name="email" placeholder="email" class="form-control" value="${email_address}" lang="oth" />
+					<input type="text" name="email" placeholder="email" class="form-control" value="${email_address}"  lang="oth"  />  
 				</div>
 			</div>
 		</div>		
@@ -80,12 +82,13 @@
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">type</span></label>
 				<div class="col-md-9">
-				   <select name="optionProject" id="optionProject"  class="form-control" >
-						<option value ="">{{"token.please_select" | translate}}</option>
-						
-						
-						
-					</select>
+				<select name="optionProject" id="optionProject"  class="form-control" >
+					<option value =""> -- {{"token.please_select" | translate}} -- </option>
+					<py:for each="rep in reporttype">
+						<option  value="${rep.id_detail_report_type}"  lang="oth"> ${rep.description} </option>	
+					</py:for> 
+					 
+				</select>
 				</div>
 			</div>											
 		</div>
@@ -103,22 +106,18 @@
 				<div class="col-md-3">
 		    	</div>
 		    	<div class="col-md-9">
-		    		<button type="submit" id="account-submit-btn" class="btn btn-primary pull-right">
+		    		<button type="submit" id="contactus-submit-btn" class="btn btn-primary pull-right">
 					 	<span class="glyphicon glyphicon-floppy-saved" ></span> <span lang="oth">save</span>
-					</button>
-		    		                 			
+					</button>            			
 		      	</div>
-		    	
 		    </div>											
 		</div>
 		</div>
-		</div>
-	</div>
 	</form>
+	
+	</div>
+	</div>
 	<script src="${tg.url('/_pluggable/pycontactus/javascript/pages/contactus/contact-index.js')}"></script>
 </body>
 <!-- END BODY -->
 </html>
-
-
-

@@ -11,8 +11,8 @@ var app = angular.module('Contactus', ['ui.grid', 'ngTouch', 'ngAnimate', 'ui-li
 			
 			
 			
-		}
-		
+			
+		};
 		
 		
 		$("#contactus-form").validate({
@@ -54,13 +54,10 @@ var app = angular.module('Contactus', ['ui.grid', 'ngTouch', 'ngAnimate', 'ui-li
 		});		
 		
 		
-		$scope.submitContactus = function() {
-	        console.log("posting data....");
-	       
-	        //$http.post('form.php', JSON.stringify(data)).success(function(){/*success callback*/});
-		};
-		
-		$scope.reportDetailTypeData
+		$scope.saveContactUs = function() {
+			console.log("saveContactUs");
+	    };
+	
 		   
 	
 	    

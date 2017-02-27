@@ -36,13 +36,10 @@ class RootController(TGController):
     def index(self, failure=None,came_from=lurl('/')):
         reload(sys).setdefaultencoding('utf8')
         self.email = ''
-        if request.identity:
-            print "login"
+        if request.identity:           
             user=request.identity['user']; 
-            self.email=user.email_address
-#             print request.identity['repoze.who.userid']  
-        
+            self.email=user.email_address        
         self.report_type=[]     
         self.report_type = model.DetailReportType.getAll(1)
-
         return dict(page='contactus', reporttype=self.report_type, email_address=self.email)
+ 
