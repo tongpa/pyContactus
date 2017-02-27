@@ -71,7 +71,7 @@
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">email</span></label>
 				<div class="col-md-9">
-					<input type="text"  name="email" placeholder="email" class="form-control" value="" lang="oth" />
+					<input type="text"  name="email" placeholder="email" class="form-control" value="${email_address}" lang="oth" />
 				</div>
 			</div>
 		</div>		
@@ -80,8 +80,11 @@
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">type</span></label>
 				<div class="col-md-9">
-				   <select name="optionProject" id="optionProject"  class="form-control" ><!-- r in ${reporttype} -->
+				   <select name="optionProject" id="optionProject"  class="form-control" >
 						<option value ="">{{"token.please_select" | translate}}</option>
+						
+						
+						
 					</select>
 				</div>
 			</div>											
