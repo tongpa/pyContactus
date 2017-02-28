@@ -75,14 +75,14 @@
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">reporter</span></label>
 				<div class="col-md-9">
-					<input  class="form-control" type="text" name="reporter" placeholder="Reporter"  value="${reporter}"  lang="oth"  />  
+					<input  class="form-control" type="text" name="reporter" placeholder="name_surname"  value="${reporter}"  lang="oth"  />  
 				</div>
 			</div>
 		</div>	
 			
 		<div class=" ${('vis-hidden', 'form-group')[self.defined('email_address') and email_address == '']}">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">email</span></label>
+				<label class="control-label col-md-3"><span lang="oth">email_address</span></label>
 				<div class="col-md-9">
 					<input  class="form-control" type="text" name="email" placeholder="email"  value="${email_address}"  lang="oth"  />  
 				</div>
@@ -91,7 +91,7 @@
 	
 		<div class="form-group">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">type</span></label>
+				<label class="control-label col-md-3"><span lang="oth">reason</span></label>
 				<div class="col-md-9">
 				<select name="optionProject" id="optionProject"  class="form-control" >
 					<option value =""> -- {{"token.please_select" | translate}} -- </option>
