@@ -1,4 +1,0 @@
-recursive-include pycontactus/public *
-recursive-include pycontactus/templates *.xhtml
-global-exclude *.pyc
-
