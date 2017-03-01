@@ -70,3 +70,6 @@ class DetailReportType(MasterBase, DeclarativeBase):
     def getAll(cls, act= 1):
         return DBSession.query(cls).filter(cls.active == str(act).decode('utf-8')).all();
     
+    
+    
+    

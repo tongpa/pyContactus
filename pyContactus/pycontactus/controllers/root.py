@@ -43,5 +43,8 @@ class RootController(TGController):
             self.reporter=user.display_name
         self.report_type=[]     
         self.report_type = model.DetailReportType.getAll(1)
-        return dict(page='contactus', reporttype=self.report_type, email_address=self.email, reporter=self.reporter)
+        return dict(page='contactus', 
+                    reporttype=self.report_type, 
+                    email_address=self.email, 
+                    reporter=self.reporter)
  
