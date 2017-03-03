@@ -47,7 +47,7 @@ class DetailReport(MasterBase, DeclarativeBase):
       
         
     def __str__(self):
-        return '<DetailReport : id_detail_report = %s>' % (self.id_detail_report )
+        return '<DetailReport : id_detail_report = %s, email=%s>' % (self.id_detail_report, self.email )
 
 class DetailReportType(MasterBase, DeclarativeBase):   
     __tablename__ = 'cts_detail_report_type'
@@ -65,6 +65,9 @@ class DetailReportType(MasterBase, DeclarativeBase):
         super(DetailReportType, self).__init__(DBSession) 
         self.active = 1;
         self.create_date =  datetime.now();
+    
+    def __str__(self):
+        return '<DetailReportType : id_detail_report_type = %s, description=%s>' % (self.id_detail_report_type, self.description )
     
     @classmethod  
     def getAll(cls, act= 1):

@@ -11,14 +11,14 @@ from tgext.pyutilservice import ManageSession, Utility, extraLog
 
 from tg.configuration import AppConfig, config
 from tg.controllers.util import auth_force_logout
-
+from surveyobject.languageobject import LanguageObject
+from surveyobject import JsontoObject
 
 from pycontactus import model
 from pycontactus.model import DBSession
 import sys
 import json
 
-from manage import ManageControllers
 import logging;
 log = logging.getLogger(__name__);
 __all__ = ['RootController']
@@ -26,8 +26,6 @@ __all__ = ['RootController']
 class RootController(TGController):
     
     def __init__(self):
-        self.manage = ManageControllers();
-        
         
         dh = LogDBHandler( config=config,request=request);        
         log.addHandler(dh)
@@ -47,4 +45,31 @@ class RootController(TGController):
                     reporttype=self.report_type, 
                     email_address=self.email, 
                     reporter=self.reporter)
+    
+    def __toContactUs(self,dic):
+        self.ContactUs = model.DetailReport();
+        self.ContactUs.id_detail_report_type = dic.get('id_detail_report_type')
+       
+        self.ContactUs.reporter = dic.get('reporter')
+        self.ContactUs.email = dic.get('email')
+        self.ContactUs.message = dic.get('message')
+        
+        return self.ContactUs
+    
+    @expose('json')
+    def addContactUs(self,  **kw):
+        reload(sys).setdefaultencoding('utf8')
+        self.userid=None 
+
+        self.ContactUs = json.loads(request.body, encoding=request.charset, object_hook=self.__toContactUs)
+        log.info(request.body, extra=extraLog())
+        
+        if request.identity:
+            user=request.identity['user']; 
+            self.ContactUs.user_id=user.user_id
+        
+        self.ContactUs.save()
+        #flash(_(LanguageObject.getdata("msg_save_success")), 'warning')     
+        return dict(status=True,header = "Information" ,  message= LanguageObject.getdata("msg_save_success", lang='EN') )    
+        
  
