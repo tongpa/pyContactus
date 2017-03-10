@@ -8,6 +8,7 @@ from datetime import datetime
 from sqlalchemy.dialects.mysql import BIT
 from surveymodel import DeclarativeBase, metadata, DBSession
 from surveyobject.mastermodel import MasterBase
+from surveymodel.voter import Telephone
 
 __all__ = ['DetailReport', 'DetailReportType']
 
@@ -22,6 +23,7 @@ class DetailReport(MasterBase, DeclarativeBase):
     user_id  = Column( BigInteger,ForeignKey('tg_user.user_id'), nullable=True, index=True) ;
     user = relation('User', backref='cts_detail_report_user_id');
     
+    telephone_number = Column(String(255), nullable=True);    
     reporter  = Column(String(255), nullable=True);
     email  = Column(String(255), nullable=True);
     message  = Column(Text, nullable=True);
@@ -32,12 +34,13 @@ class DetailReport(MasterBase, DeclarativeBase):
     update_date = Column(DateTime ,onupdate=sql.func.utc_timestamp())
     
     
-    def __init__(self, id_detail_report =None, id_detail_report_type=None, user_id=None , reporter=None, email=None, message=None, create_date=None, update_date=None, active=1):
+    def __init__(self, id_detail_report =None, id_detail_report_type=None, user_id=None ,telephone_number=None, reporter=None, email=None, message=None, create_date=None, update_date=None, active=1):
         super(DetailReport, self).__init__(DBSession) 
         
         self.id_detail_report =id_detail_report
         self.id_detail_report_type=id_detail_report_type
         self.user_id=user_id
+        self.telephone_number=telephone_number
         self.reporter=reporter
         self.email=email
         self.message=message

@@ -46,16 +46,12 @@ class RootController(TGController):
                     email_address=self.email, 
                     reporter=self.reporter)
     
-    def __toContactUs(self,dic):
-        print dic.get('reporter')
-        print dic.get('email')
+    def __toContactUs(self,dic):      
         self.ContactUs = model.DetailReport();
-        self.ContactUs.id_detail_report_type = dic.get('id_detail_report_type')
-       
+        self.ContactUs.id_detail_report_type = dic.get('id_detail_report_type')       
         self.ContactUs.reporter = dic.get('reporter')
         self.ContactUs.email = dic.get('email')
-        self.ContactUs.message = dic.get('message')
-        
+        self.ContactUs.message = dic.get('message')        
         return self.ContactUs
     
     @expose('json')
