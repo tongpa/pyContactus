@@ -187,6 +187,7 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 	});
 	
 	app.config( function($translateProvider){
+		$translateProvider.useSanitizeValueStrategy(null);
 		$translateProvider.useUrlLoader('/script/loadLangJquery');	 
 		$translateProvider.preferredLanguage('th');	 
 		$translateProvider.useCookieStorage();
