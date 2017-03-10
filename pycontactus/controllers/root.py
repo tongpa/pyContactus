@@ -47,6 +47,8 @@ class RootController(TGController):
                     reporter=self.reporter)
     
     def __toContactUs(self,dic):
+        print dic.get('reporter')
+        print dic.get('email')
         self.ContactUs = model.DetailReport();
         self.ContactUs.id_detail_report_type = dic.get('id_detail_report_type')
        
@@ -58,18 +60,18 @@ class RootController(TGController):
     
     @expose('json')
     def addContactUs(self,  **kw):
-        reload(sys).setdefaultencoding('utf8')
+        reload(sys).setdefaultencoding('utf8')     
         self.userid=None 
-
         self.ContactUs = json.loads(request.body, encoding=request.charset, object_hook=self.__toContactUs)
         log.info(request.body, extra=extraLog())
         
         if request.identity:
             user=request.identity['user']; 
             self.ContactUs.user_id=user.user_id
-        
+            self.ContactUs.reporter=user.display_name
+            self.ContactUs.email=user.user_name
+            
         self.ContactUs.save()
-        #flash(_(LanguageObject.getdata("msg_save_success")), 'warning')     
         return dict(status=True,header = "Information" ,  message= LanguageObject.getdata("msg_save_success", lang='EN') )    
         
  

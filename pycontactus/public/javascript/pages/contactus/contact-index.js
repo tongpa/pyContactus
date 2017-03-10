@@ -12,7 +12,8 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 				reporter: '',
 				email:'',
 				optionProject:'',
-				message:''
+				message:'',
+				telephone
 		};
 		
 		$scope.resetFormData = function(){
@@ -20,7 +21,8 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 					reporter: '',
 					email:'',
 					optionProject:'',
-					message:''
+					message:'',
+					telephone
 			};
 		}
 		
