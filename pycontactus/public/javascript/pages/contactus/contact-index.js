@@ -28,7 +28,7 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 		
 		$scope.init = function(url){
 			$scope.url = url;
-			language.init();
+			
 		};
 		
 		$scope.validationOptions = {

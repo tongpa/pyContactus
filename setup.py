@@ -34,11 +34,12 @@ setup(
     package_data={'pycontactus': [
         'i18n/*/LC_MESSAGES/*.mo',
         'templates/*/*',
-        'public/*/*'
+        'public/*/*/*/*'
     ]},
     message_extractors={'pycontactus': [
             ('**.py', 'python', None),
-            ('templates/**.xhtml', 'kajiki', None),
+            ('templates/**.*html', 'kajiki', None),
+           
             ('public/**', 'ignore', None)
     ]},
     entry_points="""
