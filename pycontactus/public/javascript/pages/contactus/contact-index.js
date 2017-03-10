@@ -48,16 +48,16 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 				},
 				messages: {
 					reporter:{
-						required: function() { return window.lang.translate('msg_enter_your_name'); }
+						required: function() { return window.langData.translate('msg_enter_your_name'); }
 					},
 					email :{
-						required: function() { return window.lang.translate('msg_enter_your_email'); } ,
-						email: function() { return window.lang.translate('msg_valid_email');} 
+						required: function() { return window.langData.translate('msg_enter_your_email'); } ,
+						email: function() { return window.langData.translate('msg_valid_email');} 
 						 
 					},
 					message :{
-						required: function() { return window.lang.translate('msg_enter_your_message'); } ,
-						minlength: function() {return window.lang.translate('Your username must consist of at least 2 characters'); }
+						required: function() { return window.langData.translate('msg_enter_your_message'); } ,
+						minlength: function() {return window.langData.translate('Your username must consist of at least 2 characters'); }
 					}
 				}
 				,errorElement: 'em',
