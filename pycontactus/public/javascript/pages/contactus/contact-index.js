@@ -1,4 +1,6 @@
-var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.translate', 'ngCookies', 'ngAnimate', 'ngValidate']);
+var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.translate', 'ngCookies', 'ngAnimate', 'ngValidate', 'ngIntlTelInput']);
+
+/*, 'ngIntlTelInput'*/
 
 	app.controller('ContactusData', function($scope, $http, $translate, $window){
 		$window.changLang=function(langKey){
@@ -6,21 +8,21 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 			$translate.use(langKey);
 			$translate.refresh(langKey);
 		};	
-		
+	
 		$scope.url = '';
 		$scope.formData = {
+				id_detail_report_type:'',
 				reporter: '',
-				email:'',
-				optionProject:'',
+				email:'',				
 				message:'',
 				telephone:''
 		};
 		
 		$scope.resetFormData = function(){
 			$scope.formData = {
+					id_detail_report_type:'',
 					reporter: '',
-					email:'',
-					optionProject:'',
+					email:'',				
 					message:'',
 					telephone:''
 			};
@@ -33,6 +35,10 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 		
 		$scope.validationOptions = {
 				rules:{
+					id_detail_report_type:{
+						required: true
+					},
+		
 					reporter:{
 						required: true
 					},
@@ -41,12 +47,17 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 						email: true
 					},
 					message: {
-						required: true,
-						//alphanumeric: true,
-						minlength: 2
+						required: true,						
+						minlength: 20
+					},
+					telephone :{
+						required: true
 					}
 				},
 				messages: {
+					id_detail_report_type:{
+						required: function() { return window.langData.translate('msg_select_subject'); }
+					},
 					reporter:{
 						required: function() { return window.langData.translate('msg_enter_your_name'); }
 					},
@@ -57,7 +68,10 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 					},
 					message :{
 						required: function() { return window.langData.translate('msg_enter_your_message'); } ,
-						minlength: function() {return window.langData.translate('Your username must consist of at least 2 characters'); }
+						minlength: function() {return window.langData.translate('Your username must consist of at least 20 characters'); }
+					},
+					telephone :{
+						required: function() { return window.langData.translate('msg_enter_your_message'); } 
 					}
 				}
 				,errorElement: 'em',
@@ -186,12 +200,19 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 	    };
 	});
 	
-	app.config( function($translateProvider){
+	app.config( function($translateProvider, ngIntlTelInputProvider){	
 		$translateProvider.useSanitizeValueStrategy(null);
 		$translateProvider.useUrlLoader('/script/loadLangJquery');	 
 		$translateProvider.preferredLanguage('th');	 
-		$translateProvider.useCookieStorage();
+		$translateProvider.useCookieStorage();	
+		
+		ngIntlTelInputProvider.set({
+	        initialCountry: 'th',
+	        utilsScript: '/javascript/bower_components/intl-tel-input/build/js/utils.js'
+	    });
+	
 	});
+	
 	/*
 	app.config(function ($validatorProvider) {
         $validatorProvider.setDefaults({
