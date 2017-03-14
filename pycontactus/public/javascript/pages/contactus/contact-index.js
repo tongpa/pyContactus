@@ -8,7 +8,10 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 			$translate.use(langKey);
 			$translate.refresh(langKey);
 		};	
-	
+		$scope.selected = {
+				country: ''
+		};
+		
 		$scope.url = '';
 		$scope.formData = {
 				id_detail_report_type:'',
@@ -51,7 +54,8 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 						minlength: 20
 					},
 					telephone :{
-						required: true
+						required: true,
+						number: true
 					}
 				},
 				messages: {
@@ -207,7 +211,7 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 		$translateProvider.useCookieStorage();	
 		
 		ngIntlTelInputProvider.set({
-	        initialCountry: 'th',
+	        initialCountry: 'us',
 	        utilsScript: '/javascript/bower_components/intl-tel-input/build/js/utils.js'
 	    });
 	

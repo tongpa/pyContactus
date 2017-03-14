@@ -87,9 +87,8 @@
 			<div class="form-group" >
 			<div class="row">
 				<label class="control-label col-md-3"><span lang="oth">telephone_number</span></label>
-				<div class="col-md-9">
-				    <input type="text" class="form-control" id="telephone" name="telephone" ng-model="formData.telephone" ng-intl-tel-input="ng-intl-tel-input"/>
-					{{formData.telephone}}<span ng-if="!formData.telephone">N/A</span>			
+				<div class="col-md-9" ng-class="">
+				    <input type="text" class="form-control" id="telephone" name="telephone" ng-model="formData.telephone" ng-intl-tel-input="ng-intl-tel-input"  data-initial-country="th" />
 					
 				</div>				
 			</div>
