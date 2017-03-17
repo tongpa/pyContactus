@@ -47,10 +47,19 @@ class DetailReport(MasterBase, DeclarativeBase):
         
         self.active=active
         
+ 
       
         
     def __str__(self):
-        return '<DetailReport : id_detail_report = %s, email=%s>' % (self.id_detail_report, self.email )
+        return '<DetailReport : id_detail_report = %s, email=%s>' % (self.id_detail_report, self.email )    
+    
+    @classmethod  
+    def getAll(cls, act= 1):
+        return DBSession.query(cls).filter(cls.active == str(act).decode('utf-8')).all();    
+    
+    @classmethod  
+    def getById(cls,id_detail_report=0, act=1):
+        return DBSession.query(cls).filter(cls.id_detail_report == str(id_detail_report),cls.active == str(act)).first();
 
 class DetailReportType(MasterBase, DeclarativeBase):   
     __tablename__ = 'cts_detail_report_type'
