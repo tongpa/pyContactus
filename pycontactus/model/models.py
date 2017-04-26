@@ -60,7 +60,26 @@ class DetailReport(MasterBase, DeclarativeBase):
     @classmethod  
     def getById(cls,id_detail_report=0, act=1):
         return DBSession.query(cls).filter(cls.id_detail_report == str(id_detail_report),cls.active == str(act)).first();
-
+    
+    
+    @classmethod
+    def getBySearch(cls, search="", page=0, page_size=None,act=1):
+        query = DBSession.query(cls).filter(cls.message.like('%' + str(search) + '%'), cls.active == str(act));
+        query_total = query;                
+        if page_size:
+            query = query.limit(page_size)
+        if page: 
+            page = 0 if page < 0 else page;
+            query = query.offset(page*page_size)
+        values = query.all();  
+        total = query_total.count();
+        #data = [];
+        #for v in values:
+        #    data.append(v.to_json());
+        return values,total;
+    
+    
+    
 class DetailReportType(MasterBase, DeclarativeBase):   
     __tablename__ = 'cts_detail_report_type'
 

@@ -47,7 +47,6 @@ class RootController(TGController):
                     reporter=self.reporter)
     
     def __toContactUs(self,dic):   
-        print dic   
         self.ContactUs = model.DetailReport();
         self.ContactUs.id_detail_report_type = dic.get('id_detail_report_type')       
         self.ContactUs.reporter = dic.get('reporter')

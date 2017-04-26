@@ -33,7 +33,7 @@ setup(
     include_package_data=True,
     package_data={'pycontactus': [
         'i18n/*/LC_MESSAGES/*.mo',
-        'templates/*/*',
+        'templates/*',
         'public/*/*/*/*'
     ]},
     message_extractors={'pycontactus': [
