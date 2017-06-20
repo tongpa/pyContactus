@@ -75,7 +75,7 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 						minlength: function() {return window.langData.translate('Your username must consist of at least 20 characters'); }
 					},
 					telephone :{
-						required: function() { return window.langData.translate('msg_enter_your_message'); } 
+						required: function() { return window.langData.translate('msg_enter_telephone'); } 
 					}
 				}
 				,errorElement: 'em',
@@ -214,6 +214,44 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 	        initialCountry: 'us',
 	        utilsScript: '/javascript/bower_components/intl-tel-input/build/js/utils.js'
 	    });
+		
+		
+		
+		$('.popover-dismiss').popover({trigger: 'focus'});  
+		 //$('[data-toggle="popover"]').popover({ title : 'Popover Header', container: 'body', trigger: 'focus', placement: 'right' });
+		 
+		 
+		 $('#show_help_name').popover({
+			 container: 'body', trigger: 'focus', placement: 'right',
+		 	 title : function() { return window.langData.translate('contact_us'); },
+			 content: function() { return window.langData.translate('msg_enter_your_name'); }
+		 });
+		 
+		 $('#show_help_email').popover({
+			 container: 'body', trigger: 'focus', placement: 'right',
+		 	 title : function() { return window.langData.translate('contact_us'); },
+			 content: function() { return window.langData.translate('msg_enter_your_email'); }
+		 });
+		 
+		 $('#show_help_telephone_number').popover({
+			 container: 'body', trigger: 'focus', placement: 'right',
+		 	 title : function() { return window.langData.translate('contact_us'); },
+			 content: function() { return window.langData.translate('msg_enter_telephone'); }
+		 });
+		 
+		 $('#show_help_reason').popover({
+			 container: 'body', trigger: 'focus', placement: 'right',
+		 	 title : function() { return window.langData.translate('contact_us'); },
+			 content: function() { return window.langData.translate('msg_enter_your_name'); }
+		 });
+		 
+		 $('#show_help_message').popover({
+			 container: 'body', trigger: 'focus', placement: 'right',
+		 	 title : function() { return window.langData.translate('contact_us'); },
+			 content: function() { return window.langData.translate('msg_enter_your_message'); }
+		 });
+		 
+		
 	
 	});
 	

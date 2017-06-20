@@ -68,7 +68,11 @@
 		
 		<div class=" ${('vis-hidden', 'form-group')[self.defined('reporter') and reporter == '']} ">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">name</span></label>
+				<label class="control-label col-md-3"><span lang="oth">name</span>
+					<button id="show_help_name" type="button" class="btn btn-default btn-xs">
+			      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
+			    	</button>
+				</label>
 				<div class="col-md-9">
 					<input  class="form-control" type="text" ng-model="formData.reporter" name="reporter" placeholder="from_name"  value="${reporter}"  lang="oth"  /> 
 					
@@ -78,7 +82,11 @@
 			
 		<div class=" ${('vis-hidden', 'form-group')[self.defined('email_address') and email_address == '']}">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">email</span></label>
+				<label class="control-label col-md-3"><span lang="oth">email</span>
+					<button id="show_help_email" type="button" class="btn btn-default btn-xs">
+			      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
+			    	</button>
+				</label>
 				<div class="col-md-9">
 					<input  class="form-control" type="email" ng-model="formData.email" name="email"  placeholder="email"  value="${email_address}"  lang="oth"  />  
 				</div>
@@ -86,7 +94,11 @@
 		</div>	
 			<div class="form-group" >
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">telephone_number</span></label>
+				<label class="control-label col-md-3"><span lang="oth">telephone_number</span>
+					<button id="show_help_telephone_number" type="button" class="btn btn-default btn-xs">
+			      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
+			    	</button>
+				</label>
 				<div class="col-md-9" ng-class="">
 				    <input type="text" class="form-control" id="telephone" name="telephone" ng-model="formData.telephone" ng-intl-tel-input="ng-intl-tel-input"  data-initial-country="th" />
 					
@@ -96,7 +108,11 @@
 	
 		<div class="form-group">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">reason</span></label>
+				<label class="control-label col-md-3"><span lang="oth">reason</span>
+					<button id="show_help_reason" type="button" class="btn btn-default btn-xs">
+			      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
+			    	</button>
+				</label>
 				<div class="col-md-9">
 				<select name="id_detail_report_type" ng-model="formData.id_detail_report_type" id="id_detail_report_type"  class="form-control" >
 					<option value =""> -- {{"token.please_select" | translate}} -- </option>
@@ -111,7 +127,11 @@
 					
 		<div class="form-group">
 			<div class="row">
-				<label class="control-label col-md-3"><span lang="oth">message</span></label>
+				<label class="control-label col-md-3"><span lang="oth">message</span>
+					<button id="show_help_message" type="button" class="btn btn-default btn-xs">
+			      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
+			    	</button>
+				</label>
 				<div class="col-md-9">
 				   <textarea name="message" ng-model="formData.message" placeholder="message" class="form-control" lang="oth" />
 				</div>
