@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
-encoding//pycontactus/controllers/manage/managecontrollers.py=utf-8
+encoding//pycontactus/controllers/__init__.py=utf-8
 encoding//pycontactus/controllers/root.py=utf-8
+encoding//pycontactus/helpers.py=utf-8
+encoding//pycontactus/model/__init__.py=utf-8
+encoding/setup.py=utf-8
