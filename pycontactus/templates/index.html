@@ -21,33 +21,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="${tg.url('/_pluggable/pycontactus/css/style.css')}"/>
 	
-	<script src="${tg.url('/javascript/bower_components/angular/angular.min.js')}" type="text/javascript"></script> 
 	
-	<script src="${tg.url('/javascript/bower_components/angular-animate/angular-animate.min.js')}" type="text/javascript"></script>
-  	<script src="${tg.url('/javascript/bower_components/angular-aria/angular-aria.min.js')}" type="text/javascript"></script>
-  	<script src="${tg.url('/javascript/bower_components/angular-messages/angular-messages.min.js')}" type="text/javascript"></script>
-	
-	<script src="${tg.url('/javascript/bower_components/angular-touch/angular-touch.min.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/angular-route/angular-route.min.js')}" type="text/javascript"></script>
-	
-	<script src="${tg.url('/javascript/bower_components/angular-cookies/angular-cookies.min.js')}" type="text/javascript"></script>
-	
- 	
-	<script src="${tg.url('/javascript/bower_components/angular-translate/angular-translate.min.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js')}" type="text/javascript"></script>
-	
-	<script src="${tg.url('/javascript/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js')}" type="text/javascript"></script>
-
-	<script src="${tg.url('/javascript/bower_components/jquery-validation/dist/jquery.validate.min.js')}" type="text/javascript"></script>
-	
-	<script src="${tg.url('/javascript/bower_components/intl-tel-input/build/js/utils.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/intl-tel-input/build/js/intlTelInput.js')}" type="text/javascript"></script>
-	
-	<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.module.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.provider.js')}" type="text/javascript"></script>
-	<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.directive.js')}" type="text/javascript"></script>
 </head>
 
 <body py:block="body" py:strip="True" >
@@ -167,14 +141,44 @@
 			</div>
 			</div>
 		</form>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+	<py:block name="javascript_footer">
+	
+		<script src="${tg.url('/javascript/bower_components/angular/angular.min.js')}" type="text/javascript"></script> 
+	
+		<script src="${tg.url('/javascript/bower_components/angular-animate/angular-animate.min.js')}" type="text/javascript"></script>
+	  	<script src="${tg.url('/javascript/bower_components/angular-aria/angular-aria.min.js')}" type="text/javascript"></script>
+	  	<script src="${tg.url('/javascript/bower_components/angular-messages/angular-messages.min.js')}" type="text/javascript"></script>
 		
-		</div>
-		</div>
-	<script src="${tg.url('/_pluggable/pycontactus/javascript/pages/contactus/contact-index.js')}"></script>	
+		<script src="${tg.url('/javascript/bower_components/angular-touch/angular-touch.min.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/angular-route/angular-route.min.js')}" type="text/javascript"></script>
+		
+		<script src="${tg.url('/javascript/bower_components/angular-cookies/angular-cookies.min.js')}" type="text/javascript"></script>
+		
+	 	
+		<script src="${tg.url('/javascript/bower_components/angular-translate/angular-translate.min.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js')}" type="text/javascript"></script>
+		
+		<script src="${tg.url('/javascript/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js')}" type="text/javascript"></script>
 	
-	</div>
-	</div>
+		<script src="${tg.url('/javascript/bower_components/jquery-validation/dist/jquery.validate.min.js')}" type="text/javascript"></script>
+		
+		<script src="${tg.url('/javascript/bower_components/intl-tel-input/build/js/utils.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/intl-tel-input/build/js/intlTelInput.js')}" type="text/javascript"></script>
+		
+		<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.module.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.provider.js')}" type="text/javascript"></script>
+		<script src="${tg.url('/javascript/bower_components/ng-intl-tel-input/ng-intl-tel-input.directive.js')}" type="text/javascript"></script>
 	
+	
+		<script src="${tg.url('/_pluggable/pycontactus/javascript/pages/contactus/contact-index.js')}"></script>
+	</py:block>
 </body>
 <!-- END BODY -->
 </html>

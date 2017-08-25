@@ -72,7 +72,7 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 					},
 					message :{
 						required: function() { return window.langData.translate('msg_enter_your_message'); } ,
-						minlength: function() {return window.langData.translate('Your username must consist of at least 20 characters'); }
+						minlength: function() {return window.langData.translate('Your message must consist of at least 20 characters'); }
 					},
 					telephone :{
 						required: function() { return window.langData.translate('msg_enter_telephone'); } 
