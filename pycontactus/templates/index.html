@@ -5,30 +5,18 @@
 	<py:extends href="master/master_theme_index.html"/> 
  
 <head py:block="head" py:strip="True">
-  <title py:block="master_title">Welcome to Poll &amp; Survey</title>  
-  
-  
-
+  <title py:block="master_title">Welcome to Poll &amp; Survey</title>
  	<link rel="stylesheet" type="text/css" href="${tg.url('/javascript/bower_components/angular-ui-grid/ui-grid.min.css')}"/>    
  	<link rel="stylesheet" type="text/css" href="${tg.url('/css/listsurvey-page.css')}"/>  
  	<link rel="stylesheet" type="text/css" href="${tg.url('/javascript/bower_components/ui-listView/dist/ui-listView.css')}"/>
-	
- 
 	<!-- <link rel="stylesheet" type="text/css" href="${tg.url('/javascript/bower_components/angular-material/angular-material.min.css')}"/>  -->
-	
-	
 	<link rel="stylesheet" type="text/css" href="${tg.url('/javascript/bower_components/intl-tel-input/build/css/intlTelInput.css')}"/>
-	
 	<link rel="stylesheet" type="text/css" href="${tg.url('/_pluggable/pycontactus/css/style.css')}"/>
-	
-	
 </head>
 
 <body py:block="body" py:strip="True" >
-
 	<py:block name="body_menu">${header_menu()}</py:block>
   	<py:block name="body_footer">${footer_menu()}</py:block>
-  	
   	<div >
   	<div class="content">
   	
