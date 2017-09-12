@@ -5,7 +5,6 @@ from tg import TGController
 from tg import expose, flash, require, url, lurl, request, redirect, validate
 from tg.i18n import ugettext as _
 
-
 from tgext.pylogservice import LogDBHandler
 from tgext.pyutilservice import ManageSession, Utility, extraLog
 
@@ -71,5 +70,3 @@ class RootController(TGController):
             
         self.ContactUs.save()
         return dict(status=True,header = "Information" ,  message= LanguageObject.getdata("msg_save_success", lang='EN') )    
-        
- 
