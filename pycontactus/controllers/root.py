@@ -69,4 +69,4 @@ class RootController(TGController):
             self.ContactUs.email=user.user_name
             
         self.ContactUs.save()
-        return dict(status=True,header = "Information" ,  message= LanguageObject.getdata("msg_save_success", lang='EN') )    
+        return dict(status=True,header = "Information" ,  message= LanguageObject.getdata(key="msg_save_success_contactus", code=True) )    

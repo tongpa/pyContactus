@@ -60,22 +60,23 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 				},
 				messages: {
 					id_detail_report_type:{
-						required: function() { return window.langData.translate('msg_select_subject'); }
+						required: function() { return window.langData.translate('msg_select_subject_contactus'); }
 					},
 					reporter:{
-						required: function() { return window.langData.translate('msg_enter_your_name'); }
+						required: function() { return window.langData.translate('msg_enter_your_name_contactus'); }
 					},
 					email :{
-						required: function() { return window.langData.translate('msg_enter_your_email'); } ,
-						email: function() { return window.langData.translate('msg_valid_email');} 
+						required: function() { return window.langData.translate('msg_enter_your_email_contactus'); } ,
+						email: function() { return window.langData.translate('msg_valid_email_contactus');} 
 						 
 					},
 					message :{
-						required: function() { return window.langData.translate('msg_enter_your_message'); } ,
-						minlength: function() {return window.langData.translate('Your message must consist of at least 20 characters'); }
+						required: function() { return window.langData.translate('msg_enter_your_message_contactus'); } ,
+						minlength: function() {return window.langData.translate('msg_enter_your_message_at_last_characters'); }
 					},
 					telephone :{
-						required: function() { return window.langData.translate('msg_enter_telephone'); } 
+						required: function() { return window.langData.translate('msg_enter_telephone_contactus'); } ,
+						number: function() { return window.langData.translate('msg_valid_number_contactus');} 
 					}
 				}
 				,errorElement: 'em',
@@ -186,9 +187,8 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 				$http.post($scope.url,$scope.formData).then(
 					function(response){
 						if (response.status == 200 && response.data.status == true){
-							console.log(response.data.message);							
 							$scope.resetFormData();
-							$scope.addTextModal("flash", "info", response.data.header, response.data.message);
+							$scope.addTextModal("flash", "info", response.data.header, window.langData.translate(response.data.message));
 							var webflash = window.webflash({"id": "flash", "name": "webflash"});
 						    webflash.render(); $('#myModal').modal('toggle');
 						}						
@@ -224,31 +224,31 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 		 $('#show_help_name').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_name'); }
+			 content: function() { return window.langData.translate('msg_enter_your_name_contactus'); }
 		 });
 		 
 		 $('#show_help_email').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_email'); }
+			 content: function() { return window.langData.translate('msg_enter_your_email_contactus'); }
 		 });
 		 
 		 $('#show_help_telephone_number').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_telephone'); }
+			 content: function() { return window.langData.translate('msg_enter_telephone_contactus'); }
 		 });
 		 
 		 $('#show_help_reason').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_name'); }
+			 content: function() { return window.langData.translate('msg_enter_your_name_contactus'); }
 		 });
 		 
 		 $('#show_help_message').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_message'); }
+			 content: function() { return window.langData.translate('msg_enter_your_message_contactus'); }
 		 });
 		 
 		

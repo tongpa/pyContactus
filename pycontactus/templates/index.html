@@ -36,13 +36,13 @@
 			
 			<div class=" ${('vis-hidden', 'form-group')[self.defined('reporter') and reporter == '']} ">
 				<div class="row">
-					<label class="control-label col-md-3"><span lang="oth">name</span>
+					<label class="control-label col-md-3"><span lang="oth">name_contactus</span>
 						<button id="show_help_name" type="button" class="btn btn-default btn-xs">
 				      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
 				    	</button>
 					</label>
 					<div class="col-md-9">
-						<input  class="form-control" type="text" ng-model="formData.reporter" name="reporter" placeholder="from_name"  value="${reporter}"  lang="oth"  /> 
+						<input  class="form-control" type="text" ng-model="formData.reporter" name="reporter" placeholder="placeholder_name_contactus"  value="${reporter}"  lang="oth"  /> 
 						
 					</div>
 				</div>
@@ -50,19 +50,19 @@
 				
 			<div class=" ${('vis-hidden', 'form-group')[self.defined('email_address') and email_address == '']}">
 				<div class="row">
-					<label class="control-label col-md-3"><span lang="oth">email</span>
+					<label class="control-label col-md-3"><span lang="oth">email_contactus</span>
 						<button id="show_help_email" type="button" class="btn btn-default btn-xs">
 				      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
 				    	</button>
 					</label>
 					<div class="col-md-9">
-						<input  class="form-control" type="email" ng-model="formData.email" name="email"  placeholder="email"  value="${email_address}"  lang="oth"  />  
+						<input  class="form-control" type="email" ng-model="formData.email" name="email"  placeholder="placeholder_enter_your_email_contactus"  value="${email_address}"  lang="oth"  />  
 					</div>
 				</div>
 			</div>	
 				<div class="form-group" >
 				<div class="row">
-					<label class="control-label col-md-3"><span lang="oth">telephone_number</span>
+					<label class="control-label col-md-3"><span lang="oth">telephone_number_contactus</span>
 						<button id="show_help_telephone_number" type="button" class="btn btn-default btn-xs">
 				      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
 				    	</button>
@@ -76,7 +76,7 @@
 		
 			<div class="form-group">
 				<div class="row">
-					<label class="control-label col-md-3"><span lang="oth">reason</span>
+					<label class="control-label col-md-3"><span lang="oth">reason_contactus</span>
 						<button id="show_help_reason" type="button" class="btn btn-default btn-xs">
 				      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
 				    	</button>
@@ -95,13 +95,13 @@
 						
 			<div class="form-group">
 				<div class="row">
-					<label class="control-label col-md-3"><span lang="oth">message</span>
+					<label class="control-label col-md-3"><span lang="oth">message_contactus</span>
 						<button id="show_help_message" type="button" class="btn btn-default btn-xs">
 				      		<span class="glyphicon glyphicon-question-sign text-primary"></span>
 				    	</button>
 					</label>
 					<div class="col-md-9">
-					   <textarea name="message" ng-model="formData.message" placeholder="message" class="form-control" lang="oth" />
+					   <textarea name="message" ng-model="formData.message" placeholder="placeholder_message_contactus" class="form-control" lang="oth" />
 					</div>
 				</div>											
 			</div>
