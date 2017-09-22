@@ -224,31 +224,31 @@ var app = angular.module('Contactus', ['ngTouch', 'ngAnimate',  'pascalprecht.tr
 		 $('#show_help_name').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_name_contactus'); }
+			 content: function() { return window.langData.translate('msg_help_your_name_contactus'); }
 		 });
 		 
 		 $('#show_help_email').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_email_contactus'); }
+			 content: function() { return window.langData.translate('msg_help_your_email_contactus'); }
 		 });
 		 
 		 $('#show_help_telephone_number').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_telephone_contactus'); }
+			 content: function() { return window.langData.translate('msg_help_telephone_contactus'); }
 		 });
 		 
 		 $('#show_help_reason').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_name_contactus'); }
+			 content: function() { return window.langData.translate('msg_help_your_name_contactus'); }
 		 });
 		 
 		 $('#show_help_message').popover({
 			 container: 'body', trigger: 'focus', placement: 'right',
 		 	 title : function() { return window.langData.translate('contact_us'); },
-			 content: function() { return window.langData.translate('msg_enter_your_message_contactus'); }
+			 content: function() { return window.langData.translate('msg_help_your_message_contactus'); }
 		 });
 		 
 		
